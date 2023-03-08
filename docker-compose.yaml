@@ -1,0 +1,26 @@
+# Simple UI -> API -> DB 
+version: "3.7"
+services:
+  database:
+    image: postgres:12.2
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: user
+      POSTGRES_DB: db
+    volumes:
+      - db_data:/var/lib/postgresql/data
+  api:
+    build: ./api
+    restart: always
+    ports:
+      - 5000:5000
+    depends_on:
+      - database
+  ui:
+    build: ./ui
+    restart: always
+    ports:
+      - 3000:3000
+    depends_on:
+      - api
