@@ -13,11 +13,12 @@ RUN npm install
 # Build the app
 RUN npm run build
 
+
 # Stage 2 - the production environment
 FROM nginx:stable-alpine as production-stage
 
 # Copy the build from the previous stage
-COPY --from=build-stage /app/dist /usr/share/nginx/html
+COPY --from=build-stage /app/dist/ui /usr/share/nginx/html
 
 # Expose the port the app runs in
 EXPOSE 80
