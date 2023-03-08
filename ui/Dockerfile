@@ -5,7 +5,7 @@ FROM node:18.15 as build-stage
 WORKDIR /app
 
 # Copy the package.json and package-lock.json
-COPY  --from=build-stage . .
+COPY . .
 
 # Install dependencies
 RUN npm install
