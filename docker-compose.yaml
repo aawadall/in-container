@@ -14,13 +14,13 @@ services:
     build: ./api
     restart: always
     ports:
-      - 4200:4200
+      - 3000:3000
     # depends_on:
     #   - database
   ui:
     build: ./ui
     restart: always
     ports:
-      - 3000:3000
+      - 4200:4200
     depends_on:
       - api
