@@ -290,3 +290,24 @@
       visibility: hidden;
     }
   }
+
+  .container {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 50px 1fr;
+    grid-template-areas: 
+      "top-bar top-bar"
+      "side-bar console";
+  }
+
+  .top-bar {
+    grid-area: top-bar;
+  }
+
+  .side-bar {
+    grid-area: side-bar;
+  }
+
+  .console {
+    grid-area: console;
+  }

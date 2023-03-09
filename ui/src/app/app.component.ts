@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+selectedMenuItem: any;
+onMenuItemSelected($event: Event) {
+throw new Error('Method not implemented.');
+}
   title = 'ui';
+  appTitle = "app title";
 }
