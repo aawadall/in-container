@@ -20,8 +20,5 @@ FROM nginx:stable-alpine as production-stage
 # Copy the build from the previous stage
 COPY --from=build-stage /app/dist/ui /usr/share/nginx/html
 
-# Expose the port the app runs in
-EXPOSE 80
-
 # Serve the app
 CMD ["nginx", "-g", "daemon off;"]
