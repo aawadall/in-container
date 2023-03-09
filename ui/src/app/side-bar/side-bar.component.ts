@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-side-bar',
@@ -6,6 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./side-bar.component.css']
 })
 export class SideBarComponent {
-  menuItems= ["item 1", "item 2", "item 3"];
+  @Input() menuItems: string[] = [];
+  @Output() menuItemSelected = new EventEmitter<string>();
 
+  onMenuItemClick(menuItem: string) {
+    this.menuItemSelected.emit(menuItem);
+  }
 }

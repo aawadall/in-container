@@ -1,1 +1,7 @@
-<p>side-bar works!</p>
+<nav>
+    <ul>
+        <li *ngFor="let item of menuItems" (click)="onMenuItemClick(item)">
+            {{ item }}
+        </li>
+    </ul>
+</nav>
