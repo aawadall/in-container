@@ -2,7 +2,8 @@
  * Menu Controller
  */
 
-const Menu = require('../models/menuModel');
+const MenuService = require('../services/menuServices');
+const menuService = new MenuService();
 
 // List all menu items
 exports.menu_list = function (req, res) {
@@ -13,5 +14,5 @@ exports.menu_list = function (req, res) {
     //     console.log(menu);
     //     res.send(menu);
     // })
-    res.send(Menu);
+    res.send(menuService.getMenu());
 }

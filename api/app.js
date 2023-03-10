@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
     }
 );
 
-app.use('/menu', menuRouter);
+app.use('/api/menu', menuRouter);
 
 app.listen(3000, () => {
 });
