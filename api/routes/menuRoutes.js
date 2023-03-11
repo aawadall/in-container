@@ -11,4 +11,8 @@ const menu_controller = require('../controllers/menuControllers');
 // endpoints 
 router.get('/', menu_controller.menu_list);
 
+router.get('/:id', menu_controller.menu_details);
+
+router.post('/create', menu_controller.menu_create);
+
 module.exports = router;
